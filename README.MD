@@ -14,10 +14,10 @@ A simple bookmark management system for Laravel Filament applications. This pack
 ## Screenshots
 
 ### Add Bookmark
-![Bookmark Manager](assets/add-bookmark.png)
+![Bookmark Manager](assets/add_bookmark.png)
 
 ### View Bookmarks
-![Bookmark Viewer](assets/view-bookmarks.png)
+![Bookmark Viewer](assets/view_bookmark.png)
 
 ## Requirements
 
