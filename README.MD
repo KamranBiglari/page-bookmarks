@@ -88,20 +88,20 @@ This package utilizes Filament's theming system, so you'll need to set up a cust
 
 > [!NOTE] Before proceeding, ensure you have configured a custom theme if you're using Filament Panels. Check the [Filament documentation on themes](https://filamentphp.com/docs/3.x/panels/themes) for detailed instructions. This step is required for both the Panels Package and standalone Forms package.
 
-To properly compile all the package styles, update your Tailwind configuration by adding the package's view paths
+To properly compile all the package styles, update your Tailwind configuration by adding the package's view paths:
 
-### Customizing Render Hooks
-
-You can customize where the bookmark components appear in your Filament panel by modifying the `render_hooks` configuration:
-
-```php
-'render_hooks' => [
-    'add_bookmark' => \Filament\View\PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-    'view_bookmarks' => \Filament\View\PanelsRenderHook::GLOBAL_SEARCH_AFTER,
-],
+```js
+// In your resources/css/filament/admin/tailwind.config.js
+// where admin is the name of your panel
+module.exports = {
+    content: [
+        // Include the package's blade templates
+        './vendor/jaysontemporas/page-bookmarks/resources/**/*.blade.php',
+        // Your existing paths...
+    ],
+    // The rest of your Tailwind config
+};
 ```
-
-For a complete list of available render hook options, please refer to the [official Filament documentation](https://filamentphp.com/docs/3.x/support/render-hooks). The documentation includes all available `PanelsRenderHook` constants and their specific use cases.
 
 ## Usage
 
@@ -126,6 +126,19 @@ class User extends Authenticatable
 ```
 
 ## Customization
+
+### Customizing Render Hooks
+
+You can customize where the bookmark components appear in your Filament panel by modifying the `render_hooks` configuration:
+
+```php
+'render_hooks' => [
+    'add_bookmark' => \Filament\View\PanelsRenderHook::GLOBAL_SEARCH_AFTER,
+    'view_bookmarks' => \Filament\View\PanelsRenderHook::GLOBAL_SEARCH_AFTER,
+],
+```
+
+For a complete list of available render hook options, please refer to the [official Filament documentation](https://filamentphp.com/docs/3.x/support/render-hooks). The documentation includes all available `PanelsRenderHook` constants and their specific use cases.
 
 ### Custom Icons
 
