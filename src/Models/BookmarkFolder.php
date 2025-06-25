@@ -13,6 +13,11 @@ class BookmarkFolder extends Model
         'name',
     ];
 
+    public function getTable(): string
+    {
+        return config('page-bookmarks.tables.bookmark_folders', 'bookmark_folders');
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(config('page-bookmarks.models.user', config('auth.providers.users.model')));
