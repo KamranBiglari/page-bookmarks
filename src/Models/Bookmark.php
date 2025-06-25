@@ -14,6 +14,11 @@ class Bookmark extends Model
         'url',
     ];
 
+    public function getTable(): string
+    {
+        return config('page-bookmarks.tables.bookmarks', 'bookmarks');
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(config('page-bookmarks.models.user', config('auth.providers.users.model')));
