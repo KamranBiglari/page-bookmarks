@@ -1,6 +1,6 @@
 {
     "name": "jaysontemporas/page-bookmarks",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "library",
     "require-dev": {
         "php": "^8.3",
