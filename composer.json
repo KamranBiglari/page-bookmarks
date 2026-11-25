@@ -27,7 +27,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "filament/filament": "^3.2",
+        "filament/filament": "^3.2 || ^5.0",
         "spatie/laravel-package-tools": "^1.18"
     }
 }
